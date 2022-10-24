@@ -1,0 +1,19 @@
+﻿CREATE TABLE [dbo].[HcmPositionDurationStaging] (
+    [DEFINITIONGROUP]   NVARCHAR (60) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [EXECUTIONID]       NVARCHAR (90) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [ISSELECTED]        INT           NOT NULL,
+    [TRANSFERSTATUS]    INT           NOT NULL,
+    [POSITIONID]        NVARCHAR (25) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+    [VALIDFROM]         DATETIME      NOT NULL,
+    [VALIDTO]           DATETIME      NOT NULL,
+    [PARTITION]         NVARCHAR (20) NOT NULL,
+    [SYNCSTARTDATETIME] DATETIME      NOT NULL,
+    [RECID]             BIGINT        NOT NULL,
+    CONSTRAINT [PK_HcmPositionDurationStaging] UNIQUE NONCLUSTERED ([EXECUTIONID] ASC, [POSITIONID] ASC, [VALIDFROM] ASC, [VALIDTO] ASC, [PARTITION] ASC)
+);
+
+
+GO
+CREATE CLUSTERED COLUMNSTORE INDEX [CCI_HcmPositionDurationStaging]
+    ON [dbo].[HcmPositionDurationStaging];
+

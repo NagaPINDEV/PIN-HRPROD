@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[LeaveRequestV2Staging] (
+    [DEFINITIONGROUP]             NVARCHAR (60)   NOT NULL,
+    [EXECUTIONID]                 NVARCHAR (90)   NOT NULL,
+    [ISSELECTED]                  INT             NOT NULL,
+    [TRANSFERSTATUS]              INT             NOT NULL,
+    [REQUESTID]                   NVARCHAR (20)   NOT NULL,
+    [LEAVETYPE]                   NVARCHAR (30)   NOT NULL,
+    [LEAVEDATE]                   DATETIME        NOT NULL,
+    [AMOUNT]                      NUMERIC (32, 6) NOT NULL,
+    [HALFDAYDEFINITION]           INT             NOT NULL,
+    [COMMENT_]                    NVARCHAR (MAX)  NULL,
+    [STATUS]                      INT             NOT NULL,
+    [REQUESTDATE]                 DATETIME        NOT NULL,
+    [PERSONNELNUMBER]             NVARCHAR (25)   NOT NULL,
+    [ISSUBMITTEDONBEHALFOF]       INT             NOT NULL,
+    [ISSUBMITTEDBYMANAGER]        INT             NOT NULL,
+    [ISSUBMITTEDBYHUMANRESOURCES] INT             NOT NULL,
+    [SUBMITTEDBYUSER]             NVARCHAR (20)   NOT NULL,
+    [REASONCODEID]                NVARCHAR (15)   NOT NULL,
+    [PARTITION]                   NVARCHAR (20)   NOT NULL,
+    [DATAAREAID]                  NVARCHAR (4)    NOT NULL,
+    [SYNCSTARTDATETIME]           DATETIME        NOT NULL,
+    [RECID]                       BIGINT          NOT NULL,
+    CONSTRAINT [PK_LeaveRequestV2Staging] PRIMARY KEY CLUSTERED ([EXECUTIONID] ASC, [REQUESTID] ASC, [LEAVETYPE] ASC, [LEAVEDATE] ASC, [DATAAREAID] ASC, [PARTITION] ASC)
+);
+

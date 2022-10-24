@@ -1,0 +1,2 @@
+﻿CREATE USER [jonhacking] WITHOUT LOGIN;
+

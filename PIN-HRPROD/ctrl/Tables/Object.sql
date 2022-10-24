@@ -1,0 +1,26 @@
+﻿CREATE TABLE [ctrl].[Object] (
+    [ObjectId]         INT            IDENTITY (1, 1) NOT NULL,
+    [Name]             NVARCHAR (100) NOT NULL,
+    [Description]      NVARCHAR (MAX) NULL,
+    [SourceTable]      NVARCHAR (255) NOT NULL,
+    [TargetSchema]     NVARCHAR (50)  NOT NULL,
+    [TargetTable]      NVARCHAR (255) NOT NULL,
+    [Sequence]         INT            NOT NULL,
+    [FetchXML]         NVARCHAR (MAX) NULL,
+    [FetchXMLAuto]     BIT            NOT NULL,
+    [FilterModifiedOn] BIT            NOT NULL,
+    [ADFMapping]       NVARCHAR (MAX) NULL,
+    [MergeProcedure]   BIT            NOT NULL,
+    [SyncIsFull]       BIT            NOT NULL,
+    [SyncDateFrom]     DATETIME2 (7)  NOT NULL,
+    [SyncDateTo]       DATETIME2 (7)  NULL,
+    [SyncPeriod]       INT            NOT NULL,
+    [SyncPeriodType]   NVARCHAR (50)  NOT NULL,
+    [CreatedOn]        DATETIME2 (7)  NOT NULL,
+    [ModifiedOn]       DATETIME2 (7)  NOT NULL,
+    [IsActive]         BIT            NOT NULL,
+    [Environment]      NVARCHAR (100) NULL,
+    [UpsertKey]        NVARCHAR (100) NULL,
+    CONSTRAINT [PK_Object] PRIMARY KEY CLUSTERED ([ObjectId] ASC)
+);
+
